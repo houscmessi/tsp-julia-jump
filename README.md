@@ -8,6 +8,20 @@ It includes **two classical ILP formulations** and supports **multiple solvers**
 
 ---
 
+## 📑 Table of Contents | 目录
+- [✨ Features | 特性](#-features--特性)
+- [🖼️ Visualization | 可视化](#-visualization--可视化)
+- [🧪 Generate Random Instances | 生成随机实例](#-generate-random-instances--生成随机实例)
+- [🗂️ Project Structure | 项目结构](#️-project-structure--项目结构)
+- [🚀 Quickstart | 快速开始](#-quickstart--快速开始)
+- [⚙️ Command-line Options | 命令行选项](#-command-line-options--命令行选项)
+- [📊 Example | 示例](#-example--示例)
+- [⚠️ Notes | 注意事项](#-notes--注意事项)
+- [📖 References | 参考](#-references--参考)
+- [📜 License | 许可](#-license--许可)
+
+---
+
 ## ✨ Features | 特性
 - **Two models | 两种模型**  
   - **Cutting-Plane (CG) | 割平面**：迭代添加子环消除约束 (SEC)，直到只剩单一哈密顿回路。  
