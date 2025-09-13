@@ -1,0 +1,8 @@
+
+Manifest.toml
+*.jl.*.cov
+*.jl.mem
+/results/*
+!results/.gitkeep
+.DS_Store
+Thumbs.db
