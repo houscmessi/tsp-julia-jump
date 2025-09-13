@@ -1,10 +1,3 @@
-# main.jl — single-thread Cbc stable version
-# Usage:
-#   JULIA_NUM_THREADS=1 julia --project main.jl --model cg --instance data/inst8.csv
-#
-# Notes:
-#   - Forces both Julia and Cbc to 1 thread to avoid macOS malloc crashes.
-#   - Expects ModelCG.jl / ModelMTZ.jl to expose `build!(model, instance_file)`.
 
 import Pkg
 Pkg.instantiate()
@@ -13,6 +6,16 @@ using JuMP, MathOptInterface
 const MOI = MathOptInterface
 using HiGHS      # 默认
 using Cbc        # 可选
+
+include("plot_utils.jl")
+using .PlotUtils
+
+optimize!(model)
+println("Termination status: ", termination_status(model))
+if has_values(model)
+    println("Objective value: ", object_dictionary(model))
+    PlotUtils.save_tour_plot(model, opt["instance"]; outdir="plots", varname=:x)
+end
 
 # If your project has these files, keep includes here (no-op if not used).
 if isfile(joinpath(@__DIR__, "Utils.jl"));      include("Utils.jl");      end
