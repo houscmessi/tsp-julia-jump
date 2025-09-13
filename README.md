@@ -38,7 +38,7 @@ julia --project scripts/gen_instance.jl
 
 ---
 
-## 🗂️ Project Structure | 项目结构
+ 🗂️ Project Structure | 项目结构
 tsp-julia-jump/
 ├─ Project.toml          # Dependencies | 依赖声明
 ├─ src/
@@ -58,7 +58,7 @@ tsp-julia-jump/
 
 ---
 
-## 🚀 Quickstart | 快速开始
+🚀 Quickstart | 快速开始
 
 ### 1. Install dependencies | 安装依赖
 ```bash
@@ -77,7 +77,7 @@ obj
 status
 solve_time_sec
 
-## ⚙️ Command-line Options | 命令行选项
+⚙️ Command-line Options | 命令行选项
 - `--model {cg|mtz}` : Select model (default: `cg`)  
   选择模型（默认 `cg`）  
 - `--instance path/to/file.csv` : Path to input instance  
@@ -91,7 +91,7 @@ solve_time_sec
 
 ---
 
-## 📊 Example | 示例
+📊 Example | 示例
 
 ### Run
 ```bash
