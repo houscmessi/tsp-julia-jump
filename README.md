@@ -53,8 +53,8 @@ tsp-julia-jump/
 ├─ results/
 │  └─ results.csv        # Generated after run | 运行后生成
 └─ scripts/
-├─ setup.sh           # Install deps | 一键安装依赖
-└─ run_all.sh         # Batch run | 一键批量运行
+   ├─ setup.sh           # Install deps | 一键安装依赖
+   └─ gen_instance.jl    # Random generator | 随机实例生成
 
 ---
 
@@ -76,6 +76,8 @@ instance
 obj
 status
 solve_time_sec
+
+---
 
 ⚙️ Command-line Options | 命令行选项
 - `--model {cg|mtz}` : Select model (default: `cg`)  
@@ -101,18 +103,26 @@ Output
 >>> Model = mtz, Instance = data/inst6.csv, Solver = highs
 Termination status: OPTIMAL
 Objective value: 378.0
+---
+
 
 ⚠️ Notes | 注意事项
 	•	Cbc on macOS Apple Silicon may crash with pointer being freed was not allocated.
 建议默认使用 HiGHS，Cbc 在 macOS Apple 芯片可能崩溃。
 	•	Always run with JULIA_NUM_THREADS=1 for stability.
 建议运行时保持 JULIA_NUM_THREADS=1，避免多线程不稳定。
+---
+
+
+
 
 📖 References | 参考
 	•	JuMP: https://jump.dev/
 	•	HiGHS: https://www.highs.dev/
 	•	COIN-OR Cbc: https://github.com/coin-or/Cbc
 	•	Miller, Tucker, Zemlin (1960): Original MTZ paper | 原始 MTZ 模型论文
+
+---
 
 
 📜 License | 许可
