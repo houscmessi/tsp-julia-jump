@@ -1,7 +1,6 @@
 # Traveling Salesman Problem (TSP) with JuMP | 使用 JuMP 实现旅行商问题
 
-This repository provides a Julia implementation of the **Traveling Salesman Problem (TSP)** using [JuMP](https://jump.dev/).  
-It includes **two classical ILP formulations** and supports **multiple solvers** for reproducibility.  
+[English Version](./README.en.md)
 
 本仓库提供了基于 [JuMP](https://jump.dev/) 的 **旅行商问题 (TSP)** Julia 实现，  
 包含 **两种经典整数规划 (ILP) 模型**，并支持 **多种求解器**，方便复现与扩展。
@@ -33,7 +32,6 @@ It includes **two classical ILP formulations** and supports **multiple solvers**
 - **Clean modular code | 代码结构清晰**，便于扩展和复现  
 
 ## 🖼️ Visualization | 可视化
-After solving, optimal tours can be saved as PNG files under `plots/`.  
 求解完成后，可将**最优巡回路径**绘制并保存到 `plots/` 目录。
 
 ```bash
@@ -44,8 +42,7 @@ JULIA_NUM_THREADS=1 julia --project src/main.jl --model cg --instance data/inst8
 ---
 
 
-## 🧪 Generate Random Instances | 生成随机实例
-Use the script in `scripts/` to create reproducible instances (fixed seed).  
+## 🧪 Generate Random Instances | 生成随机实例 
 使用 `scripts/` 下的脚本生成**可复现**的随机实例（固定随机种子）。
 ```bash
 julia --project scripts/gen_instance.jl
@@ -77,24 +74,22 @@ tsp-julia-jump/
 
 ## 🚀 Quickstart | 快速开始
 
--Install dependencies | 安装依赖
+-安装依赖
 ```bash
 julia --project -e 'using Pkg; Pkg.instantiate()'
 ```
-2. Run a single instance | 运行单个实例
+-运行单个实例
 ```bash
-#Example: CG model on inst8.csv with default HiGHS
 #示例：在 inst8.csv 上跑 CG 模型（默认使用 HiGHS）
 JULIA_NUM_THREADS=1 julia --project src/main.jl --model cg --instance data/inst8.csv
 ```
-3. Run all instances | 批量运行所有实例
+-批量运行所有实例
 ```bash
 JULIA_NUM_THREADS=1 julia --project src/run_all.jl
 ```
 
-4. Results | 结果
+-结果
 ```bash
-Results are written to results/results.csv
 运行结果将导出到 results/results.csv：model
 instance
 obj
@@ -134,10 +129,8 @@ Objective value: 378.0
 
 
 ## ⚠️ Notes | 注意事项
-	•	Cbc on macOS Apple Silicon may crash with pointer being freed was not allocated.
-    建议默认使用 HiGHS，Cbc 在 macOS Apple 芯片可能崩溃。
-	•	Always run with JULIA_NUM_THREADS=1 for stability.
-    建议运行时保持 JULIA_NUM_THREADS=1，避免多线程不稳定。
+	•	建议默认使用 HiGHS，Cbc 在 macOS Apple 芯片可能崩溃。
+	•	建议运行时保持 JULIA_NUM_THREADS=1，避免多线程不稳定。
 ---
 
 
@@ -147,13 +140,12 @@ Objective value: 378.0
 	•	JuMP: https://jump.dev/
 	•	HiGHS: https://www.highs.dev/
 	•	COIN-OR Cbc: https://github.com/coin-or/Cbc
-	•	Miller, Tucker, Zemlin (1960): Original MTZ paper | 原始 MTZ 模型论文
+	•	Miller, Tucker, Zemlin (1960): Original MTZ paper
 
 ---
 
 
 ## 📜 License | 许可
 ```bash
-Released under the MIT License
 本项目基于 MIT License 开源。
 ```
