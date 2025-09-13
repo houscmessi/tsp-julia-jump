@@ -22,9 +22,9 @@ It includes **two classical ILP formulations** and supports **multiple solvers**
 After solving, optimal tours can be saved as PNG files under `plots/`.  
 求解完成后，可将**最优巡回路径**绘制并保存到 `plots/` 目录。
 
-# 示例：在 inst8.csv 上运行 CG 模型，保存最优巡回图
+示例：在 inst8.csv 上运行 CG 模型，保存最优巡回图
 JULIA_NUM_THREADS=1 julia --project src/main.jl --model cg --instance data/inst8.csv
-# 输出示例：plots/inst8.csv.png
+输出示例：plots/inst8.csv.png
 ---
 
 
@@ -33,7 +33,7 @@ Use the script in `scripts/` to create reproducible instances (fixed seed).
 使用 `scripts/` 下的脚本生成**可复现**的随机实例（固定随机种子）。
 
 julia --project scripts/gen_instance.jl
-# 默认生成 data/inst10.csv（n=10, seed=123）
+默认生成 data/inst10.csv（n=10, seed=123）
 
 ---
 
@@ -57,17 +57,20 @@ tsp-julia-jump/
 
 ---
 
-🚀 Quickstart | 快速开始
+## 🚀 Quickstart | 快速开始
 
-### 1. Install dependencies | 安装依赖
+1. Install dependencies | 安装依赖
 
 julia --project -e 'using Pkg; Pkg.instantiate()'
+
 2. Run a single instance | 运行单个实例
-# Example: CG model on inst8.csv with default HiGHS
-# 示例：在 inst8.csv 上跑 CG 模型（默认使用 HiGHS）
+Example: CG model on inst8.csv with default HiGHS
+示例：在 inst8.csv 上跑 CG 模型（默认使用 HiGHS）
 JULIA_NUM_THREADS=1 julia --project src/main.jl --model cg --instance data/inst8.csv
+
 3. Run all instances | 批量运行所有实例
 JULIA_NUM_THREADS=1 julia --project src/run_all.jl
+
 4. Results | 结果
 Results are written to results/results.csv
 运行结果将导出到 results/results.csv：model
@@ -78,7 +81,7 @@ solve_time_sec
 
 ---
 
-⚙️ Command-line Options | 命令行选项
+## ⚙️ Command-line Options | 命令行选项
 - `--model {cg|mtz}` : Select model (default: `cg`)  
   选择模型（默认 `cg`）  
 - `--instance path/to/file.csv` : Path to input instance  
@@ -92,10 +95,10 @@ solve_time_sec
 
 ---
 
-📊 Example | 示例
+## 📊 Example | 示例
 
-### Run
-```bash
+Run
+
 JULIA_NUM_THREADS=1 julia --project src/main.jl --model mtz --instance data/inst6.csv --solver highs
 
 Output
@@ -105,7 +108,7 @@ Objective value: 378.0
 ---
 
 
-⚠️ Notes | 注意事项
+## ⚠️ Notes | 注意事项
 	•	Cbc on macOS Apple Silicon may crash with pointer being freed was not allocated.
 建议默认使用 HiGHS，Cbc 在 macOS Apple 芯片可能崩溃。
 	•	Always run with JULIA_NUM_THREADS=1 for stability.
@@ -115,7 +118,7 @@ Objective value: 378.0
 
 
 
-📖 References | 参考
+## 📖 References | 参考
 	•	JuMP: https://jump.dev/
 	•	HiGHS: https://www.highs.dev/
 	•	COIN-OR Cbc: https://github.com/coin-or/Cbc
@@ -124,7 +127,7 @@ Objective value: 378.0
 ---
 
 
-📜 License | 许可
+## 📜 License | 许可
 
 Released under the MIT License
 本项目基于 MIT License 开源。
