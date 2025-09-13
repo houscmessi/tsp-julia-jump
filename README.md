@@ -22,17 +22,16 @@ It includes **two classical ILP formulations** and supports **multiple solvers**
 After solving, optimal tours can be saved as PNG files under `plots/`.  
 求解完成后，可将**最优巡回路径**绘制并保存到 `plots/` 目录。
 
-```bash
 # 示例：在 inst8.csv 上运行 CG 模型，保存最优巡回图
 JULIA_NUM_THREADS=1 julia --project src/main.jl --model cg --instance data/inst8.csv
 # 输出示例：plots/inst8.csv.png
+---
 
-```markdown
+
 ## 🧪 Generate Random Instances | 生成随机实例
 Use the script in `scripts/` to create reproducible instances (fixed seed).  
 使用 `scripts/` 下的脚本生成**可复现**的随机实例（固定随机种子）。
 
-```bash
 julia --project scripts/gen_instance.jl
 # 默认生成 data/inst10.csv（n=10, seed=123）
 
@@ -61,7 +60,7 @@ tsp-julia-jump/
 🚀 Quickstart | 快速开始
 
 ### 1. Install dependencies | 安装依赖
-```bash
+
 julia --project -e 'using Pkg; Pkg.instantiate()'
 2. Run a single instance | 运行单个实例
 # Example: CG model on inst8.csv with default HiGHS
